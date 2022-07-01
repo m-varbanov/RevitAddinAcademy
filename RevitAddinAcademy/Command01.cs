@@ -79,7 +79,13 @@ namespace RevitAddinAcademy
             FilteredElementCollector collector = new FilteredElementCollector(doc);
             collector.OfClass(typeof(TextNoteType));
 
+            Transaction newTransaction = new Transaction(doc, "Create Text Note");
+            newTransaction.Start();
+
             TextNote curNote = TextNote.Create(doc, doc.ActiveView.Id, point, "This is my text note", collector.FirstElementId());
+
+            newTransaction.Commit();
+            newTransaction.Dispose();
 
             return Result.Succeeded;
         }
