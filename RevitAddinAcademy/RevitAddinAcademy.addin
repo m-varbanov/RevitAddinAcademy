@@ -19,7 +19,7 @@
     <VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
   </AddIn>
 	<AddIn Type="Command">
-		<Text>Get Created Date</Text>
+		<Text>Delete Backups Date</Text>
 		<Description>Delete backup files</Description>
 		<Assembly>RevitAddinAcademy.dll</Assembly>
 		<FullClassName>RevitAddinAcademy.cmdDeleteBackupsDate</FullClassName>

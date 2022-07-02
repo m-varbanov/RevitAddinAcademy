@@ -56,12 +56,13 @@ namespace RevitAddinAcademy
                             //check when file was last write time
                             DateTime fileModified = File.GetLastWriteTime(file);
 
-
-                            //add file name to our list
-                            deletedFileLog.Add(file + " - Last Modified: " +fileModified.ToString());
+                            string user = System.IO.File.GetAccessControl(directory).GetOwner(typeof(System.Security.Principal.NTAccount)).ToString();
 
                             if (fileModified > DateTime.Now.AddMonths(-1))
                             {
+                                //add file name to our list
+                                deletedFileLog.Add(file + " - Last Modified: " + fileModified.ToString() + " - Created By: " + user);
+
                                 File.Delete(file);
 
                                 //increment counter 
