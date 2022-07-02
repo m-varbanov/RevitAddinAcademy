@@ -15,7 +15,7 @@ using System.IO;
 namespace RevitAddinAcademy
 {
     [Transaction(TransactionMode.Manual)]
-    public class Command01 : IExternalCommand
+    public class CreateMultipleNotes : IExternalCommand
     {
         public Result Execute(
           ExternalCommandData commandData,
@@ -27,52 +27,20 @@ namespace RevitAddinAcademy
             Application app = uiapp.Application;
             Document doc = uidoc.Document;
 
-            int number = 1;
-            double number2 = 10.5;
+           
             string text = "Revit Add-in Academy";
+            string fileName = doc.PathName;
+
+            double offsest = 0.05;
+            double offsetCalc = offsest * doc.ActiveView.Scale;
+
 
             //Revit specific
-            XYZ point = new XYZ(0,0,0);
-            XYZ point2 = new XYZ(0,0,0);
+            XYZ curPoints = new XYZ(0,0,0);
+            XYZ offsetPoint = new XYZ(0,offsetCalc,0);
 
-            double math = number * number2 + 100;
-            double math2 = math % number2;
+            int range = 100;
 
-            List<string> strings = new List<string>();
-            strings.Add("item 1");
-            strings.Add("item 2");
-
-            List<XYZ> points = new List<XYZ>();
-            points.Add(point);
-            points.Add(point2);
-
-            int range = 200;
-
-            for(int i = 1; i <= range; i++)
-            {
-                number = number + 1;
-
-            }
-
-            string newString = "";
-
-            foreach(string s in strings)
-            {
-                if(s == "item 1")
-                {
-                    newString = "got to 1";
-                }
-                else if(s == "item 2")
-                {
-                    newString = "got to 2";
-                }
-                else
-                {
-                    newString = "got somewhere else";
-                }
-
-                newString = newString + s;
-            }
 
             double newNumber = Method01(4.2, 3.8);
 
@@ -82,7 +50,12 @@ namespace RevitAddinAcademy
             Transaction newTransaction = new Transaction(doc, "Create Text Note");
             newTransaction.Start();
 
-            TextNote curNote = TextNote.Create(doc, doc.ActiveView.Id, point, "This is my text note", collector.FirstElementId());
+            for (int i = 1; i < range; i++)
+            {
+                TextNote curNote = TextNote.Create(doc, doc.ActiveView.Id, curPoints, "This is line " + i.ToString(), collector.FirstElementId());
+                curPoints = curPoints.Subtract(offsetPoint);
+            }
+
 
             newTransaction.Commit();
             newTransaction.Dispose();

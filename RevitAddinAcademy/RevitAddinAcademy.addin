@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <RevitAddIns>
   <AddIn Type="Command">
-    <Text>Command RevitAddinAcademy</Text>
+    <Text>Command</Text>
     <Description>Some description for RevitAddinAcademy</Description>
     <Assembly>RevitAddinAcademy.dll</Assembly>
     <FullClassName>RevitAddinAcademy.Command</FullClassName>
@@ -9,15 +9,24 @@
     <VendorId>com.typepad.thebuildingcoder</VendorId>
     <VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
   </AddIn>
-  <AddIn Type="Command01">
-	<Text>Command 01</Text>
+  <AddIn Type="Command">
+	<Text>CreateSingleNote</Text>
 	<Description>Some description for RevitAddinAcademy</Description>
 	<Assembly>RevitAddinAcademy.dll</Assembly>
-	<FullClassName>RevitAddinAcademy.Command01</FullClassName>
+	<FullClassName>RevitAddinAcademy.CreateSingleNote</FullClassName>
 	<ClientId>85440B93-D033-4506-B784-0EE35286736D</ClientId>
 	<VendorId>com.typepad.thebuildingcoder</VendorId>
 	<VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
   </AddIn>
+	<AddIn Type="Command">
+		<Text>CreateMultipleNotes</Text>
+		<Description>Some description for RevitAddinAcademy</Description>
+		<Assembly>RevitAddinAcademy.dll</Assembly>
+		<FullClassName>RevitAddinAcademy.CreateMultipleNotes</FullClassName>
+		<ClientId>AF2EAA58-592F-4A69-959D-F079B0A3DFE5</ClientId>
+		<VendorId>com.typepad.thebuildingcoder</VendorId>
+		<VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
+	</AddIn>
   <AddIn Type="Application">
     <Name>Application RevitAddinAcademy</Name>
     <Assembly>RevitAddinAcademy.dll</Assembly>
