@@ -15,7 +15,7 @@ using System.IO;
 namespace RevitAddinAcademy
 {
     [Transaction(TransactionMode.Manual)]
-    public class CreateMultipleNotes : IExternalCommand
+    public class CreateMultipleNotesChallenge : IExternalCommand
     {
         public Result Execute(
           ExternalCommandData commandData,
@@ -40,19 +40,40 @@ namespace RevitAddinAcademy
             XYZ offsetPoint = new XYZ(0,offsetCalc,0);
 
             int range = 100;
+            int a = 3;
+            int b = 5;
 
-
-            double newNumber = Method01(4.2, 3.8);
+             double num1 = checkDivisibility(a, b);
+            
 
             FilteredElementCollector collector = new FilteredElementCollector(doc);
             collector.OfClass(typeof(TextNoteType));
+
 
             Transaction newTransaction = new Transaction(doc, "Create Text Note");
             newTransaction.Start();
 
             for (int i = 1; i < range; i++)
             {
-                TextNote curNote = TextNote.Create(doc, doc.ActiveView.Id, curPoints, "This is line " + i.ToString(), collector.FirstElementId());
+                if (num1 == 3)
+                {
+                  TextNote curNote = TextNote.Create(doc, doc.ActiveView.Id, curPoints, "FIZZ " + i.ToString(), collector.FirstElementId());
+                }
+                else if (num1 == 5)
+                {
+                  TextNote curNote = TextNote.Create(doc, doc.ActiveView.Id, curPoints, "BUZZ " + i.ToString(), collector.FirstElementId());
+                }
+                else if (num1 == 0 && num1 == 5)
+                {
+                    TextNote curNote = TextNote.Create(doc, doc.ActiveView.Id, curPoints, "FIZZBUSS " + i.ToString(), collector.FirstElementId());
+                }
+                else
+                {
+                    TextNote curNote = TextNote.Create(doc, doc.ActiveView.Id, curPoints, i.ToString(), collector.FirstElementId());
+                    
+                }
+
+
                 curPoints = curPoints.Subtract(offsetPoint);
             }
 
@@ -63,13 +84,21 @@ namespace RevitAddinAcademy
             return Result.Succeeded;
         }
 
-        internal double Method01(double a, double b)
+        internal double checkDivisibility(double a, double b)
         {
-            double c = a + b;
+            double c = a % b;
 
             Debug.Print("Got here" + c.ToString());
 
             return c;
-        }
+        }   
+
+
+        //internal TextNote result(Document doc, ElementId elementId, XYZ curPoints, String resultMessage, FilteredElementCollector collector)
+        //{
+        //    TextNote curNote = TextNote.Create(doc, doc.ActiveView.Id, curPoints, "BUZZ " + i.ToString(), collector.FirstElementId());
+        //    return curNote;
+        //}
+      
     }
 }

@@ -52,7 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="CreateMultipleNotes-Challenge.cs" />
+    <Compile Include="CreateMultipleNotesChallenge.cs" />
     <Compile Include="CreateMultipleNotes.cs" />
     <Compile Include="CreateSingleNote.cs" />
     <Compile Include="Command.cs" />
