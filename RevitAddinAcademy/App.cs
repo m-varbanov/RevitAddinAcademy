@@ -14,6 +14,7 @@ namespace RevitAddinAcademy
     {
         public Result OnStartup(UIControlledApplication a)
         {
+            
             return Result.Succeeded;
         }
 
