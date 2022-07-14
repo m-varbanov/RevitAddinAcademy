@@ -19,7 +19,7 @@
     <VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
   </AddIn>
   <AddIn Type="Command">
-	<Text>Command RevitAddinAcademy</Text>
+	<Text>Read Excel</Text>
 	<Description>Read Excel</Description>
 	<Assembly>RevitAddinAcademy.dll</Assembly>
 	<FullClassName>RevitAddinAcademy.excelPlugIn</FullClassName>

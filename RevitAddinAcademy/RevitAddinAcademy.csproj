@@ -40,6 +40,7 @@
     <StartProgram>$(ProgramW6432)\Autodesk\Revit 2022\Revit.exe</StartProgram>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="RevitAPI">
       <HintPath>$(ProgramW6432)\Autodesk\Revit 2022\RevitAPI.dll</HintPath>
       <Private>False</Private>
@@ -54,7 +55,7 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="cmdDeleteBackups.cs" />
-    <Compile Include="ExcelPlugIn.cs" />
+    <Compile Include="excelPlugIn.cs" />
     <Compile Include="Command.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

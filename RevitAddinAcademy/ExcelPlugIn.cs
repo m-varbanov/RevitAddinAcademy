@@ -14,7 +14,7 @@ using Excel = Microsoft.Office.Interop.Excel;
 namespace RevitAddinAcademy
 {
     [Transaction(TransactionMode.Manual)]
-    public class ComExcelPlugInmand : IExternalCommand
+    public class excelPlugIn : IExternalCommand
     {
         public Result Execute(
           ExternalCommandData commandData,
@@ -40,14 +40,47 @@ namespace RevitAddinAcademy
 
             //do some stuff in Excel 
 
+            List<string[]> dataList = new List<string[]>();
 
+            for     (int i = 1; i < rowCount; i++)
+            {
+                Excel.Range cell1 = excelRg.Cells[i, 1];
+                Excel.Range cell2 = excelRg.Cells[i, 2];
 
+                string data1 = cell1.Value.ToString();
+                string data2 = cell2.Value.ToString();
+
+                string[] dataArray = new string[2];
+
+                dataArray[0] = data1;
+                dataArray[1] = data2;
+
+                dataList.Add(dataArray);
+
+            }
+
+            using (Transaction t = new Transaction(doc))
+            {
+                t.Start("Create some Revit stuff");
+                Level curLevel = Level.Create(doc, 80);
+
+                FilteredElementCollector collector = new FilteredElementCollector(doc);
+                collector.OfCategory(BuiltInCategory.OST_TitleBlocks);
+                collector.WhereElementIsElementType();
+
+                ViewSheet curSheet = ViewSheet.Create(doc, collector.FirstElementId());
+                curSheet.SheetNumber = "101011";
+                curSheet.Name = "test";
+
+                t.Commit();
+                t.Dispose();
+
+            }
 
             excelWb.Close();
             excelApp.Quit();
 
-
-
+            
 
             return Result.Succeeded;
         }
