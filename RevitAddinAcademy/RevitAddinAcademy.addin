@@ -22,7 +22,7 @@
 	<Text>Command RevitAddinAcademy</Text>
 	<Description>Read Excel</Description>
 	<Assembly>RevitAddinAcademy.dll</Assembly>
-	<FullClassName>RevitAddinAcademy.ExcelPlugIn</FullClassName>
+	<FullClassName>RevitAddinAcademy.excelPlugIn</FullClassName>
 	<ClientId>807D32BC-BD92-4F0D-8F0C-398F5E5D777A</ClientId>
 	<VendorId>com.typepad.thebuildingcoder</VendorId>
 	<VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
