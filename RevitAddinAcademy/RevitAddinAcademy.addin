@@ -19,10 +19,10 @@
     <VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
   </AddIn>
   <AddIn Type="Command">
-	<Text>Read Excel</Text>
-	<Description>Read Excel</Description>
+	<Text>cmdProjectSetup</Text>
+	<Description>Project Setup</Description>
 	<Assembly>RevitAddinAcademy.dll</Assembly>
-	<FullClassName>RevitAddinAcademy.excelPlugIn</FullClassName>
+	<FullClassName>RevitAddinAcademy.cmdProjectSetup</FullClassName>
 	<ClientId>807D32BC-BD92-4F0D-8F0C-398F5E5D777A</ClientId>
 	<VendorId>com.typepad.thebuildingcoder</VendorId>
 	<VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
