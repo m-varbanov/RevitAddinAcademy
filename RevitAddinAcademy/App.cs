@@ -14,6 +14,8 @@ namespace RevitAddinAcademy
     {
         public Result OnStartup(UIControlledApplication a)
         {
+
+            TaskDialog.Show("Hello", "Plug-in is working");
             
             return Result.Succeeded;
         }
