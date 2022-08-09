@@ -9,8 +9,8 @@
     <VendorId>com.typepad.thebuildingcoder</VendorId>
     <VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
   </AddIn>
-    <AddIn Type="cmdSelectElements">
-    <Text>Command RevitAddinAcademy</Text>
+    <AddIn Type="Command">
+    <Text>cmdSelectElements</Text>
     <Description>Some description for RevitAddinAcademy</Description>
     <Assembly>RevitAddinAcademy.dll</Assembly>
     <FullClassName>RevitAddinAcademy.cmdSelectElements</FullClassName>
