@@ -58,21 +58,22 @@
     <Compile Include="App.cs" />
     <Compile Include="cmdDeleteBackups.cs" />
     <Compile Include="cmdWallsFromLines.cs" />
-    <Compile Include="Command.cs" />
-    <Compile Include="FrmWallsFromLines.cs">
+    <Compile Include="FrmToDoList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmWallsFromLines.Designer.cs">
-      <DependentUpon>FrmWallsFromLines.cs</DependentUpon>
+    <Compile Include="FrmToDoList.Designer.cs">
+      <DependentUpon>FrmToDoList.cs</DependentUpon>
     </Compile>
+    <Compile Include="ToDoList.cs" />
+    <Compile Include="Command.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="RevitAddinAcademy.addin" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FrmWallsFromLines.resx">
-      <DependentUpon>FrmWallsFromLines.cs</DependentUpon>
+    <EmbeddedResource Include="FrmToDoList.resx">
+      <DependentUpon>FrmToDoList.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -25,7 +25,7 @@ namespace RevitAddinAcademy
             Application app = uiapp.Application;
             Document doc = uidoc.Document;
 
-            List<string> wallTypes = GetAllWallTypeNames(doc);
+            //List<string> wallTypes = GetAllWallTypeNames(doc);
             List<string> lineStypes = GetAllLineStyles(doc);
 
             return Result.Succeeded;
@@ -55,11 +55,11 @@ namespace RevitAddinAcademy
             
         }
 
-        private List<string> GetAllWallTypeNames(Document doc)
-        {
+        //private List<string> GetAllWallTypeNames(Document doc)
+        //{
 
 
             
-        }
+        //}
     }
 }
